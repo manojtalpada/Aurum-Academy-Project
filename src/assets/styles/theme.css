@@ -1,0 +1,284 @@
+.main-bg {
+	background-size:cover;
+	position:relative;
+}
+.main-bg:before {
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	content:"";
+	background:rgba(0,0,0,0.1);
+}
+#header.affix {
+	background: #0f72d3;
+}
+.slider-text-area {
+	padding: 100px 0px 50px 0px;
+	position: relative;
+	z-index: 1;
+}
+.slider-text h1, .slider-text h4 {
+	color:#ffffff;
+}
+.slider-text h1 {
+	font-weight: 700;
+	font-size: 34px;
+	margin-bottom: 20px;
+	line-height: 44px;
+}
+.slider-text h4 {
+	font-weight: 300;
+	font-size: 16px;
+	margin-bottom: 30px;
+	line-height: 26px;
+}
+.heading {
+	margin-bottom:20px;
+}
+.heading h2 {
+	position: relative;
+	font-size: 28px;
+	font-weight: 700;
+}
+.heading h4 {
+	position: relative;
+	font-size:16px;
+	font-weight:300;
+	line-height:normal;
+}
+.imgbox {
+	border-radius: 10px;
+	overflow: hidden;
+}
+.infobox {
+	background: #0f72d3;
+	color: #ffffff;
+	border-radius: 10px;
+	padding: 30px;
+	height: 100%;
+}
+.infobox h5 {
+	font-weight: 300;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.infobox h3 {
+	line-height: 36px;
+	font-size: 26px;
+	font-weight: 600;
+}
+.state-box {
+	background:url(../images/corner-bg.png) no-repeat right top;
+	padding:10px;
+	border-radius:10px;
+	overflow:hidden;
+	margin-top:30px;
+	box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+	-webkit-box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+	-moz-box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+	-o-box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+	-ms-box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+}
+.state-img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #e97813;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+}
+.state-info {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left:15px;
+}
+.state-info span {
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+}
+.class-box {
+	margin-bottom:20px;
+}
+.class-box h4 {
+	font-size:14px;
+	text-align: center;
+	font-weight: 500;
+	margin-top: 10px;
+}
+.video-box {
+	border-radius:10px;
+	overflow:hidden;
+	background:#555555;
+	height:100%;
+}
+.review-box {
+	border: 2px solid #eeeeee;
+	border-radius: 10px;
+	padding: 25px;
+	text-align: center;
+}
+.review-image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto 20px auto;
+}
+.review-box h4 {
+	font-size: 15px;
+	font-weight: 300;
+	line-height: normal;
+	text-align: center;
+}
+.review-by {
+	color: #0f72d3;
+}
+.review-by span {
+	font-weight: 500;
+}
+.section-footer {
+	background: #1b2733;
+	color: rgba(255,255,255,0.4);
+}
+.sitemap h4 {
+	font-size: 15px;
+	color: #ffffff;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.sitemap ul {
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+.sitemap ul li {
+	margin-bottom: 5px;
+}
+.sitemap ul li a {
+	color: rgba(255,255,255,0.4);
+	font-weight: 400;
+	font-size: 13px;
+}
+.sitemap ul li a:hover, .sitemap ul li a:focus {
+	color: rgba(255,255,255,1);
+	text-decoration:none;
+}
+.sitemap {
+	padding-bottom: 20px;
+}
+.footer-copyright {
+	border-top: 1px solid rgba(255,255,255,0.1);
+	padding: 20px 0;
+	font-weight: 400;
+	font-size: 13px;
+}
+.footer-social {
+	text-align: right;
+}
+.footer-social a {
+	color: rgba(255,255,255,0.4);
+	font-size: 18px;
+	margin-left: 10px;
+}
+.footer-social a:hover, .footer-social a:focus {
+	color:#ffffff;
+}
+#header.subheader {
+	background: #0f72d3;
+}
+.form-box {
+	padding:40px;
+}
+.form-box h3 {
+	font-size: 22px;
+	font-weight: 700;
+}
+.form-box h5 {
+	font-weight: 300;
+	font-size: 18px;
+}
+.login-facebook {
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	border-radius: 50px;
+	line-height: 44px;
+	background: #3c66c4;
+	color: #ffffff;
+	margin: 15px auto;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+.login-facebook:hover, .login-facebook:focus {
+	background:#4772d1;
+	color:#ffffff;
+	text-decoration:none;
+}
+.login-gmail {
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	border-radius: 50px;
+	line-height: 44px;
+	background:#cf4332;
+	color: #ffffff;
+	margin: 15px auto;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+.login-gmail:hover, .login-gmail:focus {
+	background:#dd4e3d;
+	color:#ffffff;
+	text-decoration:none;
+}
+.or {
+	position: relative;
+}
+.or:after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 1px;
+	background: #eeeeee;
+	left: 0;
+	right: 0;
+	top: 22px;
+}
+.or span {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 10px auto;
+	background: #dddddd;
+	color: #333333;
+	font-weight: 700;
+	text-align: center;
+	line-height: 40px;
+	position: relative;
+	z-index: 9;
+}
+.keep-sign-in {
+	display: inline-block;
+}
+.forgott-password {
+	float: right;
+}
+.login-register-link a {
+	text-align: center;
+	text-decoration: underline;
+}
+.login-register-image {
+	background:url(../images/login-register-image.jpg) no-repeat center top;
+	background-size:cover;
+}
+.field-dob .form-control {
+	width: auto;
+	margin-right: 15px;
+}

@@ -1,0 +1,57 @@
+body {
+	padding:0;
+}
+.section-dashboard {
+	display: -webkit-box;
+	display: flex;
+	overflow-x: -moz-hidden-unscrollable;
+	position: relative;
+}
+.dashboard-sidebar {
+	background-color: #232529;
+	box-sizing: border-box;
+	color: hsla(0,0%,100%,.6);
+	height: 100vh;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	max-height: 100vh;
+	min-height: 100vh;
+	min-width: 340px;
+	padding: 0;
+	position: relative;
+	width: 340px;
+	z-index: 10000;
+}
+.dashboard-content {
+	border-left: 1px solid #324054;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-flex: 1;
+	flex: 1;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	height: 100vh;
+	position: relative;
+	width: calc(100% - 340px);
+}
+.dashboard-navigation .nav-header .nav-title {
+	display: block;
+	padding: 10px 20px;
+	font-weight: 400;
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 500;
+}
+.dashboard-navigation .nav-body {
+	padding: 20px;
+}
+.dashboard-navigation .accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.dashboard-navigation .accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
