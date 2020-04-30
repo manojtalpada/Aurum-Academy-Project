@@ -20,23 +20,23 @@
                     <h3 class="text-center">Welcome Back</h3>
                     <h5 class="text-center">Sign in to Aurum Academy</h5>
                     <div class="social-login">
-                        <a href="#" class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
-                        <a href="#" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
+                        <a href="#" (click)="signInWithFB('facebook')" class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+                        <a href="#" (click)="signInWithGoogle()" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
                     </div>
                     <div class="or">
                         <span>OR</span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email address">
+                        <input type="text" [(ngModel)]="user.email " name="email " #email="ngModel" class="form-control" placeholder="Email address">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Password">
+                        <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group text-right">
                         <a href="#">Forgott Password</a>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Login" class="btn btn-warning btn-block">
+                        <input type="button" (click)="logindd1();" value="Login" class="btn btn-warning btn-block">
                     </div>
                     <div class="login-register-link text-center">Don’t have an account? <a href="#">Sign Up</a></div>
                 </div>

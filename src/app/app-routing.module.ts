@@ -14,13 +14,16 @@ var userType = sessionStorage.getItem('user_type');
 const routes: Routes = [
 
   {path:"login",component: LoginComponent},
-  {path :"header",component:HeaderComponent},  
+  {path:"login/:slug_url",component: LoginComponent},
+
+  {path :"header",component:HeaderComponent,canActivate: [AuthGuard],},  
   {path:"register",component: RegisterComponent},
   {path:"logout",component:LogoutComponent,canActivate: [AuthGuard],},
   {path :"main-page",component:MainPageComponent},
   {path :"dashboard",component:DashboardComponent,canActivate: [AuthGuard]},
   {path:"",redirectTo:"dashboard",pathMatch:"full"},
   // { path: '**', redirectTo: ''}
+  {path:':url_slug/dashboard',component: DashboardComponent},
 
 ];
 
