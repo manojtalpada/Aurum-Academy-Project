@@ -30,6 +30,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { SelectModule } from 'ng-select';
 import { DataTableModule } from 'angular2-datatable';
+import { TeacherDashboardComponent } from './view/teacher-dashboard/teacher-dashboard.component';
+import { StudentDashboardComponent } from './view/student-dashboard/student-dashboard.component';
 
 
 const APP_CONTAINERS = [
@@ -65,7 +67,9 @@ const APP_CONTAINERS = [
     LogoutComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TeacherDashboardComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
