@@ -31,7 +31,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { SelectModule } from 'ng-select';
 import { DataTableModule } from 'angular2-datatable'; 
-
+import { CustomFormsModule} from 'ng2-validation'
+ 
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
@@ -74,6 +75,7 @@ export function provideConfig() {
     HttpClientModule,    
     CommonModule, 
     FormsModule,   
+    CustomFormsModule,
     // SocialLoginModule,
     BsDropdownModule,
     DataTableModule,   

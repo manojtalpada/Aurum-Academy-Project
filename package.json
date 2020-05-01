@@ -29,6 +29,7 @@
     "bootstrap": "^4.4.1",
     "jwt-decode": "^2.2.0",
     "ng-select": "^1.0.2",
+    "ng2-validation": "^4.2.0",
     "ngx-bootstrap": "^5.6.1",
     "ngx-markdown": "^9.0.0",
     "ngx-paypal": "^6.1.0",
