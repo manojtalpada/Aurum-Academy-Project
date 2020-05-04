@@ -34,6 +34,8 @@ import { DataTableModule } from 'angular2-datatable';
 import { TeacherDashboardComponent } from './view/teacher-dashboard/teacher-dashboard.component';
 import { StudentDashboardComponent } from './view/student-dashboard/student-dashboard.component';
 
+import { CustomFormsModule} from 'ng2-validation'
+ 
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
@@ -78,7 +80,8 @@ export function provideConfig() {
     HttpClientModule,    
     CommonModule, 
     FormsModule,   
-    SocialLoginModule,
+    CustomFormsModule,
+    // SocialLoginModule,
     BsDropdownModule,
     DataTableModule,   
     SelectModule, 
