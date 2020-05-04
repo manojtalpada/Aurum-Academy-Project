@@ -2,34 +2,135 @@
 
  
 <section class="section-dashboard">
-
 	<div class="dashboard-sidebar">
+    	 <div class="site-logo">
+         	<a href="#"><img src="assets/images/logo.png" class="img-fluid" alt=""></a>
+         </div>
+         <div class="teacher-info text-center">
+         	<div class="teacher-avatar">
+            	<img src="assets/images/user.jpg" alt="">
+            </div>
+            <a href="#" class="btn btn-success btn-sm">Edit Profile</a>
+         </div>
          <div class="dashboard-navigation">
-         	<div id="accordion" class="accordion">
+         	<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
         		
-                    <div class="nav-header collapsed" data-toggle="collapse" href="#collapseOne">
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#decks">
                         <a class="nav-title"> <span><img src="assets/images/teacher/icon-decks.png"></span> Decks </a>
                     </div>
-                    <div id="collapseOne" class="nav-body collapse" data-parent="#accordion">
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </p>
+                    <div id="decks" class="nav-body collapse" data-parent="#accordion">
+                        <ul>
+                        	<li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                        </ul>
                     </div>
-                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#grades">
                         <a class="nav-title"><span><img src="assets/images/teacher/icon-grades.png"></span> Grades</a>
                     </div>
-                    <div id="collapseTwo" class="nav-body collapse" data-parent="#accordion">
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </p>
+                    <div id="grades" class="nav-body collapse" data-parent="#accordion">
+                        	No grade here
                     </div>
-                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        <a class="nav-title"> Item 3 </a>
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#messages">
+                        <a class="nav-title"><span><img src="assets/images/teacher/icon-messages.png"></span> Messages</a>
                     </div>
-                    <div id="collapseThree" class="nav-body collapse" data-parent="#accordion">
-                        <div class="">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore sustainable VHS. </div>
+                    <div id="messages" class="nav-body collapse" data-parent="#accordion">
+                 		No message here       
                     </div>
-                
+                	<div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#courses">
+                        <a class="nav-title"><span><img src="assets/images/teacher/icon-courses.png"></span> Courses</a>
+                    </div>
+                  
+                    <div id="courses" class="nav-body collapse" data-parent="#accordion">
+                        <ul>
+                        	<li><a href="#">English Courses</a></li>
+                            <li><a href="#">Science Courses</a></li>
+                            <li><a href="#">Maths Courses</a></li>
+                            <li><a href="#">Social Courses</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-header " *ngIf="userType == 't'"  data-parent="#accordion"    >
+                        <a class="nav-title" routerLink="/subaccounts"><span><img src="assets/images/user-png.png"></span> Subaccounts</a>
+                    </div>
 		    </div>
          </div>
      </div>
      <div class="dashboard-content">
-       	sdddss
+     	<div class="heading-section">
+        	<h2>Math Courses</h2>
+            <div class="heading-meta">Creator : <a href="#">nick1988</a> | 20 lessions</div>
+            <div class="meta-links">
+            	<a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+        </div>
+       	<div class="info-section">
+        	<div class="info-heading-section">
+            	<div class="row">
+                	<div class="col-sm-6">
+                    	<h3>Math Courses</h3>
+                        <div class="breadcrumb-bar">
+                        	<a href="#">Courses</a> > Maths Courses
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                    	
+                    </div>
+                </div>
+            </div>
+        	<div class="nested-list">
+        	<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+        		
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#a1">
+                        <a class="nav-title"> Lesson one  title take place here </a>
+                    </div>
+                    <div id="a1" class="nav-body collapse" data-parent="#accordion">
+                        <ul class="file-tree">
+    <li><a href="#">Folder one name take place here</a>
+      <ul>
+        <li><a href="#">Sub Folder</a>
+          <ul>
+            <li>
+              <div class="row">
+                    <div class="col-sm-4">
+                    	<a href="#"> 22 cards in this lesson</a>
+                    </div>
+                    <div class="col-sm-4">
+                    	<a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> lessoninfo.pdf</a>
+                    </div>
+                    <div class="col-sm-4">
+                    	<a href="#"><i class="fa fa-globe" aria-hidden="true"></i> http://myurl.com</a>
+                    </div>
+                </div>
+            </li>
+            
+          </ul>
+        </li>
+        <li><a href="#link2">Link 2</a> </li>
+        <li><a href="#link3">Link 3</a> </li>
+        <li><a href="#link4">Link 4</a> </li>
+      </ul>
+    </li>
+    <li><a href="#">Canada</a>
+      <ul>
+        <li><a href="#">Link 1</a> </li>
+        <li><a href="#">Link 2</a> </li>
+        <li><a href="#">Link 3</a> </li>
+        <li><a href="#">Link 4</a> </li>
+      </ul>
+    </li>
+  </ul>
+                    </div>
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#a2">
+                        <a class="nav-title"> Lesson one  title take place here </a>
+                    </div>
+                    <div id="a2" class="nav-body collapse" data-parent="#accordion">
+                        	No grade here
+                    </div>
+		    </div>
+        </div>
+        </div>
+        
      </div> 
 </section>

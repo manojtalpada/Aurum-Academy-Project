@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   usersocial: SocialUser;
   sData:any = {};
+  tooglepool:boolean=true;
 
   constructor(private aunumservices : AunumService,private _route: ActivatedRoute,private userService: UserService,
     private _router: Router,private authService: AuthService,public authenticationService: AuthenticationService) { }
@@ -27,6 +28,15 @@ export class RegisterComponent implements OnInit {
    
   
     });
+  }
+  changeEvent(event){
+    if(event.target.checked){
+
+      this.tooglepool = false;
+    }else{
+      this.tooglepool = true;
+
+    }
   }
 
   register() {

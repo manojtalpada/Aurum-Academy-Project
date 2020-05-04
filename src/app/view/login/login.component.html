@@ -20,8 +20,8 @@
                     <h3 class="text-center">Welcome Back</h3>
                     <h5 class="text-center">Sign in to Aurum Academy</h5>
                     <div class="social-login">
-                        <a href="#" (click)="signInWithFB('facebook')" class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
-                        <a href="#" (click)="signInWithGoogle()" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
+                        <a   (click)="signInWithFB('facebook')"   class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+                        <a  (click)="signInWithGoogle()" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
                     </div>
                     <div class="or">
                         <span>OR</span>
@@ -36,7 +36,10 @@
                         <a href="#">Forgott Password</a>
                     </div>
                     <div class="form-group">
-                        <input type="button" (click)="logindd1();" value="Login" class="btn btn-warning btn-block">
+                        <button   (click)="logindd();" value="Login" class="btn btn-warning btn-block">Login</button>
+                        <button id="openModalUserButton" (click)="addModel.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                        <button id="openModalButton" (click)="socialModel.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                        <button id="openModalsubUserButton" (click)="subModel.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
                     </div>
                     <div class="login-register-link text-center">Don’t have an account? <a href="#">Sign Up</a></div>
                 </div>
@@ -119,3 +122,133 @@
         </div>
     </div>
 </footer>
+
+
+<!-- Simple login -->
+<div bsModal #addModel="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Select Type</h4>
+                <button type="button" class="close" (click)="addModel.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="select1">Select UserType</label>
+                                <fieldset class="form-group">
+                                    <ng-select name="user_type"   [(ngModel)]="userType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="type" [allowClear]="true"></ng-select>
+                                </fieldset>
+                            </div>
+                            <!-- <div *ngIf="slug_type=='Teacher'">
+                                <div class="form-group">
+                                    <label for="name">Slug URL</label>
+                                    <input class="form-control" id="name" type="text" [(ngModel)]="userType.url_slug" #url_slug="ngModel" name="url_slug" placeholder="Enter Slug URL">
+
+                                </div>
+                            </div> -->
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" addModel.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addUserType();addModel.hide()">Save</button>
+                    <!-- <button type="button" (click)="updateLesson();addModel.hide()" *ngIf="lesson.id != null" class="btn btn-primary">Update
+                        </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Social Login -->
+
+<div bsModal #socialModel="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Select Type</h4>
+                <button type="button" class="close" (click)="socialModel.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="select1">Select UserTypdasdase</label>
+                                <fieldset class="form-group">
+                                    <ng-select name="user_type"  [(ngModel)]="userType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="type" [allowClear]="true"></ng-select>
+                                </fieldset>
+                            </div>
+                            <!-- <div *ngIf="slug_type=='Teacher'" class="form-group">
+                                <label for="name">Slug URL</label>
+                                <input class="form-control" id="name" type="text" [(ngModel)]="userType.url_slug" #url_slug="ngModel" name="url_slug" placeholder="Enter Slug URL">
+
+                            </div> -->
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" socialModel.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addsocialUserType();socialModel.hide()">Save</button>
+                    <!-- <button type="button" (click)="updateLesson();addModel.hide()" *ngIf="lesson.id != null" class="btn btn-primary">Update
+                        </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- subModel -->
+<div bsModal #subModel="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Select Type</h4>
+                <button type="button" class="close" (click)="subModel.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="select1">Select UserType</label>
+                                <fieldset class="form-group">
+                                    <ng-select name="user_type"   [(ngModel)]="subuserType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="type" [allowClear]="true"></ng-select>
+                                </fieldset>
+                            </div>
+                            <!-- <div *ngIf="slug_type=='Teacher'" class="form-group">
+                                <label for="name">Slug URL</label>
+                                <input class="form-control" id="name" type="text" [(ngModel)]="subuserType.url_slug" #url_slug="ngModel" name="url_slug" placeholder="Enter Slug URL">
+
+                            </div> -->
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" subModel.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addsubUserType();subModel.hide()">Save</button>
+                    <!-- <button type="button" (click)="updateLesson();addModel.hide()" *ngIf="lesson.id != null" class="btn btn-primary">Update
+                        </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

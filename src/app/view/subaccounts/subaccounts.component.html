@@ -1,0 +1,319 @@
+<section class="section-dashboard">
+	<div class="dashboard-sidebar">
+    	 <div class="site-logo">
+         	<a href="#"><img src="assets/images/logo.png" class="img-fluid" alt=""></a>
+         </div>
+         <div class="teacher-info text-center">
+         	<div class="teacher-avatar">
+            	<img src="assets/images/user.jpg" alt="">
+            </div>
+            <a href="#" class="btn btn-success btn-sm">Edit Profile</a>
+         </div>
+         <div class="dashboard-navigation">
+         	<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+        		
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#decks">
+                        <a class="nav-title"> <span><img src="assets/images/teacher/icon-decks.png"></span> Decks </a>
+                    </div>
+                    <div id="decks" class="nav-body collapse" data-parent="#accordion">
+                        <ul>
+                        	<li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                            <li><a href="#">Lesson sub heading</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#grades">
+                        <a class="nav-title"><span><img src="assets/images/teacher/icon-grades.png"></span> Grades</a>
+                    </div>
+                    <div id="grades" class="nav-body collapse" data-parent="#accordion">
+                        	No grade here
+                    </div>
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#messages">
+                        <a class="nav-title"><span><img src="assets/images/teacher/icon-messages.png"></span> Messages</a>
+                    </div>
+                    <div id="messages" class="nav-body collapse" data-parent="#accordion">
+                 		No message here       
+                    </div>
+                	<div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#courses">
+                        <a class="nav-title"><span><img src="assets/images/teacher/icon-courses.png"></span> Courses</a>
+                    </div>
+                  
+                    <div id="courses" class="nav-body collapse" data-parent="#accordion">
+                        <ul>
+                        	<li><a href="#">English Courses</a></li>
+                            <li><a href="#">Science Courses</a></li>
+                            <li><a href="#">Maths Courses</a></li>
+                            <li><a href="#">Social Courses</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-header "   data-parent="#accordion"    >
+                        <a class="nav-title"><span><img src="assets/images/user-png.png"></span> Subaccounts</a>
+                    </div>
+		    </div>
+         </div>
+     </div>
+     <div class="dashboard-content">
+     	<div class="heading-section">
+        	<h2>Subaccount Users</h2>
+            <!-- <div class="heading-meta">Creator : <a href="#">nick1988</a> | 20 lessions</div> -->
+            <a  (click)=" model={};openModel()" class="btn btn-primary btn-sm float-right">+ Create New Account</a>
+            <button id="openTypeModal" (click)="slugModal.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+            <button id="openModalUserButton" (click)="userModal.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+            <div class="meta-links">
+            	<!-- <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
+                <!-- <a   class="btn btn-primary float-right">+ Create New Account</a> -->
+
+            </div>
+        </div>
+       	<div class="info-section">
+        	<div class="info-heading-section">
+            	<div class="row">
+                	<div class="col-sm-6">
+                    	<!-- <h3>Subaccount Users</h3> -->
+                        <div class="breadcrumb-bar">
+                        	<!-- <a href="#">Courses</a> > Maths Courses -->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                    	
+                    </div>
+                </div>
+            </div>
+        	<!-- <div class="nested-list">
+        	<div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+        		
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#a1">
+                        <a class="nav-title"> Lesson one  title take place here </a>
+                    </div>
+                    <div id="a1" class="nav-body collapse" data-parent="#accordion">
+                        <ul class="file-tree">
+    <li><a href="#">Folder one name take place here</a>
+      <ul>
+        <li><a href="#">Sub Folder</a>
+          <ul>
+            <li>
+              <div class="row">
+                    <div class="col-sm-4">
+                    	<a href="#"> 22 cards in this lesson</a>
+                    </div>
+                    <div class="col-sm-4">
+                    	<a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> lessoninfo.pdf</a>
+                    </div>
+                    <div class="col-sm-4">
+                    	<a href="#"><i class="fa fa-globe" aria-hidden="true"></i> http://myurl.com</a>
+                    </div>
+                </div>
+            </li>
+            
+          </ul>
+        </li>
+        <li><a href="#link2">Link 2</a> </li>
+        <li><a href="#link3">Link 3</a> </li>
+        <li><a href="#link4">Link 4</a> </li>
+      </ul>
+    </li>
+    <li><a href="#">Canada</a>
+      <ul>
+        <li><a href="#">Link 1</a> </li>
+        <li><a href="#">Link 2</a> </li>
+        <li><a href="#">Link 3</a> </li>
+        <li><a href="#">Link 4</a> </li>
+      </ul>
+    </li>
+  </ul>
+                    </div>
+                    <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#a2">
+                        <a class="nav-title"> Lesson one  title take place here </a>
+                    </div>
+                    <div id="a2" class="nav-body collapse" data-parent="#accordion">
+                        	No grade here
+                    </div>
+		    </div>
+        </div> -->
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <table class="table" [mfData]="userlist | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="5">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>BirthDate</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mf.data; let i = index">
+                            <!-- {{item | json}} -->
+                            <td>{{item.first_name}}</td>
+                            <td>{{item.last_name}}</td>
+                            <td>{{item.user_name}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.birthdate | date: "dd/MM/yyyy"}}</td>
+
+                            <td align="center">
+                                <div class="action-buttons">
+                                    <a href="#" data-toggle="modal" (click)="openRegisterModel(item);updateUserdata(); editModal.show()" class="btn btn-success"><span class="mdi mdi-lead-pencil"></span></a>
+                                    <a href="#" data-toggle="modal" (click)="openRegisterModel(item);deleteuser();" class="btn btn-danger"><span class="mdi mdi-close"></span></a>
+                                </div>
+                            </td>
+                            <!-- <td>
+                                <button type="button" (click)="editModal.show()" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false" class="btn btn-info">
+                                    <i class="fa fa-edit"></i>
+                                  </button>
+                            </td> -->
+                            <!-- <td>
+                                <a [routerLink]="[item.user_name+'/contact']">Go to details</a>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]">
+                                </mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+     </div> 
+</section>
+
+<!-- New Account Modal -->
+<div bsModal #userModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Create User Account</h4>
+                <button type="button" class="close" (click)="userModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+
+                                <input class="form-control" type="text" [(ngModel)]="model.first_name" name="first_name" #first_name="ngModel" placeholder="First Name" />
+                                <label for="name"></label>
+                                <input class="form-control" type="text" [(ngModel)]="model.last_name" name="last_name" #last_name="ngModel" placeholder="Last Name" />
+                                <label for="name"></label>
+                                <input class="form-control" type="text" [(ngModel)]="model.user_name" name="user_name" #user_name="ngModel" placeholder="username" />
+                                <label for="name"></label>
+                                <label for="name"></label>
+                                <input type="date" class="form-control" placeholder="birthday" name="birthdate" [(ngModel)]="model.birthdate" #birthdate="ngModel">
+
+                                <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="model.email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel" required>
+
+                                <label for="name"></label>
+                                <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="model.password" id="password" #password="ngModel" minlength="8">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" userModal.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addAccount(); userModal.hide()">Save
+             </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- New Account Modal -->
+
+<div bsModal #editModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update User Details</h4>
+                <button type="button" class="close" (click)="editModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+
+                                <input class="form-control" type="text" [(ngModel)]="model.first_name" name="first_name" #first_name="ngModel" placeholder="First Name" />
+                                <label for="name"></label>
+                                <input class="form-control" type="text" [(ngModel)]="model.last_name" name="last_name" #last_name="ngModel" placeholder="Last Name" />
+                                <label for="name"></label>
+                                <input class="form-control" type="text" [(ngModel)]="model.user_name" name="user_name" #user_name="ngModel" placeholder="username" />
+                                <label for="name"></label>
+                                <label for="name"></label>
+                                <input type="date" class="form-control" placeholder="birthday" name="birthdate" [(ngModel)]="model.birthdate" #birthdate="ngModel">
+
+                                <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="model.email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel" required>
+
+                                <!-- <label for="name"></label>
+                                <input type="text" class="form-control" placeholder="Slug ID" name="url_slug" [(ngModel)]="model.url_slug" id="url_slug" #url_slug="ngModel" minlength="8"> -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" editModal.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="updateUser(); editModal.hide()">Save
+            Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #slugModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header appoint-head-color">
+                <h4 class="modal-title appoint-color"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Enter Slug URL</h4>
+                <button type="button" class="close" (click)="slugModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- <div class="form-group">
+                                <label for="select1">Select UserTypdasdase</label>
+                                <fieldset class="form-group">
+                                    <ng-select name="user_type"  [(ngModel)]="userType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="type" [allowClear]="true"></ng-select>
+                                </fieldset>
+                            </div> -->
+                            <div   class="form-group">
+                                <label for="name">Slug URL</label>
+                                <input class="form-control" id="name" type="text" [(ngModel)]="currentUser.url_slug" #url_slug="ngModel" name="url_slug" placeholder="Enter Slug URL">
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)=" slugModal.hide()">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="updateSlug();slugModal.hide()">Save</button>
+                    <!-- <button type="button" (click)="updateLesson();addModel.hide()" *ngIf="lesson.id != null" class="btn btn-primary">Update
+                        </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

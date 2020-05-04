@@ -159,6 +159,7 @@ export class UserService {
                 sessionStorage.setItem('userid',JSON.stringify(data.data.result.id));
                 sessionStorage.setItem('Facebook_ID',JSON.stringify(data.data.result.facebook_id))
                 sessionStorage.setItem('Google_ID',JSON.stringify(data.data.result.google_id))
+                
              }
             
             return data;

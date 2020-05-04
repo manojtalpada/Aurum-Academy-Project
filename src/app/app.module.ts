@@ -18,6 +18,7 @@ import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/c
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './helper';
 import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
+import { ModalModule, AlertModule, TabsModule } from 'ngx-bootstrap';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -31,7 +32,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { SelectModule } from 'ng-select';
 import { DataTableModule } from 'angular2-datatable'; 
-import { CustomFormsModule} from 'ng2-validation'
+import { CustomFormsModule} from 'ng2-validation';
+import { SubaccountsComponent } from './view/subaccounts/subaccounts.component'
+import { ViewUserFilterPipe } from './view/subaccounts/datafilterpipe';
  
 
 const APP_CONTAINERS = [
@@ -67,7 +70,9 @@ export function provideConfig() {
     LogoutComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SubaccountsComponent,
+    ViewUserFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,9 @@ export function provideConfig() {
     SelectModule, 
     ReactiveFormsModule,
     AngularEditorModule,
-    ButtonsModule.forRoot(),
+    ButtonsModule.forRoot(), 
+    ModalModule.forRoot(),
+    AlertModule.forRoot(),
     CKEditorModule,
 
  

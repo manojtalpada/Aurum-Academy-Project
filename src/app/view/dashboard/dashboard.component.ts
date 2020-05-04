@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+userType:any;
+  constructor() { 
+    this.userType =JSON.parse(sessionStorage.getItem('user_type'));
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }

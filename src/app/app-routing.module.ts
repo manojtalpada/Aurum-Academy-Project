@@ -7,6 +7,7 @@ import { MainPageComponent } from './view/main-page/main-page.component';
 import { LogoutComponent } from './view/logout/logout.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { HeaderComponent } from './view/header/header.component';
+import { SubaccountsComponent } from './view/subaccounts/subaccounts.component';
 
 var userType = sessionStorage.getItem('user_type');
 // console.log(userType)
@@ -21,6 +22,8 @@ const routes: Routes = [
   {path:"logout",component:LogoutComponent,canActivate: [AuthGuard],},
   {path :"main-page",component:MainPageComponent},
   {path :"dashboard",component:DashboardComponent,canActivate: [AuthGuard]},
+  {path :"subaccounts",component:SubaccountsComponent,canActivate: [AuthGuard]},
+
   {path:"",redirectTo:"dashboard",pathMatch:"full"},
   // { path: '**', redirectTo: ''}
   {path:':url_slug/dashboard',component: DashboardComponent},
