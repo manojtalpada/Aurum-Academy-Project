@@ -54,7 +54,13 @@
          </div>
      </div>
      <div class="dashboard-content">
-     	<div class="heading-section">
+        
+     	<div class="heading-section"> 
+             <div class="form-group" *ngIf="this.currentUser.url_slug != ''">
+                <input type="text" [(ngModel)]="url" style="width: 250px;" readonly value="Enter text to be copied" #userinput> 
+                <button (click)="copyInputMessage(userinput)" class="btn btn-primary btn-sm " value="click to copy" >Copy from Textbox</button>
+             </div>
+                
         	<h2>Subaccount Users</h2>
             <!-- <div class="heading-meta">Creator : <a href="#">nick1988</a> | 20 lessions</div> -->
             <a  (click)=" model={};openModel()" class="btn btn-primary btn-sm float-right">+ Create New Account</a>

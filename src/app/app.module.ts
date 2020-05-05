@@ -35,7 +35,7 @@ import { DataTableModule } from 'angular2-datatable';
 import { CustomFormsModule} from 'ng2-validation';
 import { SubaccountsComponent } from './view/subaccounts/subaccounts.component'
 import { ViewUserFilterPipe } from './view/subaccounts/datafilterpipe';
- 
+import { ClipboardModule } from 'ngx-clipboard';
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
@@ -91,7 +91,7 @@ export function provideConfig() {
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     CKEditorModule,
-
+    ClipboardModule
  
   ],
   providers: [

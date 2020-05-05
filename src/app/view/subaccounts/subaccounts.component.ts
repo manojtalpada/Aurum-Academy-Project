@@ -15,6 +15,7 @@ export class SubaccountsComponent implements OnInit {
   users:any = {};
   model: any = {};
   public editModel;
+  url:any={};
   userid = sessionStorage.getItem('userid');
   contact: any;
   userdata: any = {};
@@ -38,6 +39,10 @@ export class SubaccountsComponent implements OnInit {
     //   this.contacts = data;
     //   console.log(this.contacts)
     //   })
+    this.currentUser = JSON.parse( sessionStorage.getItem('currentUser')) 
+       this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+
+       console.log(this.url)
   }
 
 
@@ -49,6 +54,9 @@ export class SubaccountsComponent implements OnInit {
   openModel(){
 
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser'))
+    var url;
+       url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+       console.log(url)
     console.log(this.currentUser.url_slug)
     if(this.currentUser.url_slug != null && this.currentUser.url_slug != ""){
       document.getElementById("openModalUserButton").click();
@@ -80,10 +88,7 @@ export class SubaccountsComponent implements OnInit {
      // user_type:"",
      url_slug: this.currentUser.url_slug,
      action: "update",
-   };
-    
-  
-
+   }; 
    
    this.aunumservices.registerUpdate(data)
    .subscribe(
@@ -92,6 +97,8 @@ export class SubaccountsComponent implements OnInit {
        // console.log(data.data.result)
        sessionStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 
+        this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+       console.log(this.url)
       alert('Slug_Added Successfully')
        // this._router.navigate(['login']);
       //  sessionStorage.setItem("user_type",JSON.stringify(this.userType.user_type)); 
@@ -102,6 +109,13 @@ export class SubaccountsComponent implements OnInit {
      });
    console.log(data);
  }
+
+ /* To copy Text from Textbox */
+ copyInputMessage(inputElement){
+  inputElement.select();
+  document.execCommand('copy');
+  inputElement.setSelectionRange(0, 0);
+}
 
   getAllUser() {
      var dataget = {
