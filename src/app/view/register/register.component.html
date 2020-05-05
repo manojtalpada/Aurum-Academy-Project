@@ -103,13 +103,13 @@
 
 
                     <div class="form-group">
-                        <label><input type="checkbox" required> I accept Aurum Academy's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        <label><input type="checkbox" (change)="changeEvent($event)" required> I accept Aurum Academy's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
 
                     </div>
                     <div class="form-group">
-                        <input type="button" (click)="register()" [disabled]="!RegiterForm.form.valid" value="Sign Up" class="btn btn-warning btn-block">
+                        <input type="button" (click)="register()" [disabled]="!RegiterForm.form.valid || tooglepool" value="Sign Up" class="btn btn-warning btn-block">
                     </div>
-                    <div class="login-register-link text-center">Already have an account? <a href="#">Sign In</a></div>
+                    <div class="login-register-link text-center" >Already have an account? <a routerLink="/login" href="#">Sign In</a></div>
                 </div>
             </form>
             </div>

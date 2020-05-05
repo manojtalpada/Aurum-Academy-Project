@@ -31,6 +31,12 @@ export class AunumService {
             return res;
         });
     }
+    getUserByID(data){
+        return this.http.post<any>(appConfig.apiUrl+'/user/',data)
+        .map(res => {
+            return res;
+        });
+    }
     updateuserdata(data){
         return this.http.post<any>(appConfig.apiUrl + '/user/', data)
         .map(res => {

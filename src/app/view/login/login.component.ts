@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   uType:any = "";
 
   // private loggedIn: boolean;
-  public type: Array<IOption> = [
+  public types: Array<IOption> = [
     { value: "t", label: "Teacher" },
     { value: "s", label: "Student" },
   ];
@@ -43,10 +43,13 @@ export class LoginComponent implements OnInit {
   contact: any;
   userdata: any = {};
   contacts: any[] = [];
-  constructor(private SocialloginService: UserService,private contactService: ContactService,private aunumservices : AunumService,private authService: AuthService,private userService: UserService, private _router: Router, private _route: ActivatedRoute, private _masterservices: MasterService, public authenticationService: AuthenticationService) { }
+  constructor(private SocialloginService: UserService,private contactService: ContactService,private aunumservices : AunumService,private authService: AuthService,private userService: UserService, private _router: Router, private _route: ActivatedRoute, private _masterservices: MasterService, public authenticationService: AuthenticationService) {
+    
+   }
   
   ngOnInit() {
 
+    console.log(this.types)
     this._route.paramMap.subscribe(params => {
       // console.log(params.get("slug_url"))
       this.slug_url = params.get("slug_url")
@@ -63,6 +66,11 @@ export class LoginComponent implements OnInit {
 
   });
   }
+
+  // selected(values){
+  //   // console.log(values.label)
+  //   this.slug_type = values.label;
+  //   }
 
   logindd() {
     var userLogin = {
@@ -125,66 +133,67 @@ export class LoginComponent implements OnInit {
         }
       );
     } else {
-      var subuserLogin = {
-        email: this.user.email,
-        password: this.user.password,
-        url_slug: this.slug_url,
-        action: "sub_login",
-      };
-      // console.log(subuserLogin);
+      this.subbLogin()
+      // var subuserLogin = {
+      //   email: this.user.email,
+      //   password: this.user.password,
+      //   url_slug: this.slug_url,
+      //   action: "sub_login",
+      // };
+      // // console.log(subuserLogin);
 
-      this.userService.subLogin(subuserLogin).subscribe(
-        (res) => {
-          if (res.status == "0") {
-            alert("login Faild");
-          } else {
+      // this.userService.subLogin(subuserLogin).subscribe(
+      //   (res) => {
+      //     if (res.status == "0") {
+      //       alert("login Faild");
+      //     } else {
          
-            var val = {
-              birthdate: res.data.result.birthdate,
-              created_at: res.data.result.created_at,
-              current_package_id: res.data.result.current_package_id,
-              current_package_name: res.data.result.current_package_name,
-              current_package_pay_by_user_id:res.data.result.current_package_pay_by_user_id,
-              current_package_type: res.data.result.current_package_type,
-              deleted_status: res.data.result.deleted_status,
-              email: res.data.result.email,
-              facebook_id: res.data.result.facebook_id,
-              first_name: res.data.result.first_name,
-              google_id: res.data.result.google_id,
-              id: res.data.result.id,
-              last_name: res.data.result.last_name,
-              master_id: res.data.result.master_id,
-              password: res.data.result.password,
-              permission_to_create_course:res.data.result.permission_to_create_course,
-              permission_to_join_classes: res.data.result.permission_to_join_classes,
-              status: res.data.result.status,
-              updated_at: res.data.result.updated_at,
-              url_slug: res.data.result.url_slug,
-              user_name: res.data.result.user_name,
-              user_type:this.uType,
-            };
-                  // console.log(data.data.result)
-                  this.subuserType = val;
-                  // console.log(this.userType)
+
+      //       var val = {
+      //         birthdate: res.data.result.birthdate,
+      //         created_at: res.data.result.created_at,
+      //         current_package_id: res.data.result.current_package_id,
+      //         current_package_name: res.data.result.current_package_name,
+      //         current_package_pay_by_user_id:res.data.result.current_package_pay_by_user_id,
+      //         current_package_type: res.data.result.current_package_type,
+      //         deleted_status: res.data.result.deleted_status,
+      //         email: res.data.result.email,
+      //         facebook_id: res.data.result.facebook_id,
+      //         first_name: res.data.result.first_name,
+      //         google_id: res.data.result.google_id,
+      //         id: res.data.result.id,
+      //         last_name: res.data.result.last_name,
+      //         master_id: res.data.result.master_id,
+      //         password: res.data.result.password,
+      //         permission_to_create_course:res.data.result.permission_to_create_course,
+      //         permission_to_join_classes: res.data.result.permission_to_join_classes,
+      //         status: res.data.result.status,
+      //         updated_at: res.data.result.updated_at,
+      //         url_slug: res.data.result.url_slug,
+      //         user_name: res.data.result.user_name,
+      //         user_type:this.uType,
+      //       };
+      //             // console.log(data.data.result)
+      //             this.subuserType = val;
+      //             // console.log(this.userType)
       
-                  if(this.subuserType.user_type !="" && this.subuserType.user_type !=null){
-                  // this._router.navigate(['dashboard']);
-                  this._router.navigate([this.slug_url+'/dashboard']);
+      //             if(this.subuserType.user_type !="" && this.subuserType.user_type !=null){
+      //             // this._router.navigate(['dashboard']);
+      //             this._router.navigate([this.slug_url+'/dashboard']);
       
-                  }else{
-                    alert("In first Login");
-                     document.getElementById("openModalsubUserButton").click();
+      //             }else{
+      //                 document.getElementById("openModalsubUserButton").click();
       
-                  }
-             // this.userType = data.data.result;
+      //             }
+      //        // this.userType = data.data.result;
            
-            // this._router.navigate(['course']);
-          }
-        },
-        (error) => {
-          alert("login Faild");
-        }
-      );
+      //       // this._router.navigate(['course']);
+      //     }
+      //   },
+      //   (error) => {
+      //     alert("login Faild");
+      //   }
+      // );
     }
   }
 
@@ -279,10 +288,7 @@ export class LoginComponent implements OnInit {
    
     
        // this._router.navigate(['login']);
-       sessionStorage.setItem(
-         "user_type",
-         JSON.stringify(this.userType.user_type)
-       );
+       sessionStorage.setItem("user_type",JSON.stringify(this.userType.user_type));
    this.logindd1();
 
      },
@@ -292,8 +298,71 @@ export class LoginComponent implements OnInit {
    console.log(data);
  }
 
+ subbLogin(){
+  var subuserLogin = {
+      email: this.user.email,
+      password: this.user.password,
+      url_slug: this.slug_url,
+      action: "sub_login",
+    };
+    // console.log(subuserLogin);
 
+    this.userService.subLogin(subuserLogin).subscribe(
+      (res) => {
+        if (res.status == "0") {
+          alert("login Faild");
+        } else {
+          alert("login successfully");            
+             
+                this._router.navigate([this.slug_url+'/dashboard']); 
+        }
+      },
+      (error) => {
+        alert("login Faild");
+      }
+    );
 
+}
+addsubUserType(){
+    
+  var data = {
+   user_id: this.subuserType.id,
+
+   my_id: this.subuserType.id,
+   first_name: this.subuserType.first_name,
+   last_name: this.subuserType.last_name,
+   user_name: this.subuserType.user_name,
+   birthdate: this.subuserType.birthdate,
+   email: this.subuserType.email,
+   password: this.subuserType.password,
+   google_id: this.subuserType.google_id,
+   facebook_id: this.subuserType.facebook_id,
+   current_package_id: "",
+   current_package_name: "",
+   current_package_type: "",
+   current_package_pay_by_user_id: "",
+   master_id: this.subuserType.master_id,
+   user_type:"",
+   url_slug: this.subuserType.url_slug,
+   action: "update",
+ };  
+ this.aunumservices.registerUpdate(data)
+ .subscribe(
+   data => {
+     var custdetails = data;
+     // console.log(data.data.result)
+ 
+  
+     // this._router.navigate(['login']);
+     sessionStorage.setItem("user_type",JSON.stringify(this.subuserType.user_type));
+ this.subbLogin();
+
+   },
+   error => {
+     console.log(error);
+   });
+ console.log(data);
+}
 
  //Social Login
 
@@ -335,8 +404,59 @@ Savesresponse(usersocial: SocialUser) {
     // this.response = res.userDetail;
     // localStorage.setItem('socialusers', JSON.stringify( this.usersocial));
     // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
-    this.socialLogin1(usersocial.id);
+    this.socialLogin(usersocial.id);
     // this._router.navigate(['dashboard']);
+  });
+}
+
+socialLogin(userid) {
+  var userSet = {
+    action: "social_login",
+    facebook_id: userid,
+  };
+  this.userService.social_login(userSet).subscribe((res: any) => {
+    // debugger;
+     
+    var val = {
+      birthdate: res.data.result.birthdate,
+      created_at: res.data.result.created_at,
+      current_package_id: res.data.result.current_package_id,
+      current_package_name: res.data.result.current_package_name,
+      current_package_pay_by_user_id:res.data.result.current_package_pay_by_user_id,
+      current_package_type: res.data.result.current_package_type,
+      deleted_status: res.data.result.deleted_status,
+      email: res.data.result.email,
+      facebook_id: res.data.result.facebook_id,
+      first_name: res.data.result.first_name,
+      google_id: res.data.result.google_id,
+      id: res.data.result.id,
+      last_name: res.data.result.last_name,
+      master_id: res.data.result.master_id,
+      password: res.data.result.password,
+      permission_to_create_course:res.data.result.permission_to_create_course,
+      permission_to_join_classes: res.data.result.permission_to_join_classes,
+      status: res.data.result.status,
+      updated_at: res.data.result.updated_at,
+      url_slug: res.data.result.url_slug,
+      user_name: res.data.result.user_name,
+      user_type:this.uType,
+    };
+    // console.log(val);
+     
+
+    this.userType = val;
+
+    if (this.userType.user_type != null && this.userType.user_type != "") {
+      this._router.navigate(["dashboard"]);
+    } else {
+      // alert("select Type first");
+      document.getElementById("openModalButton").click();
+    }
+
+    // this.response = res.userDetail;
+    // localStorage.setItem('socialusers', JSON.stringify( this.usersocial));
+    // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
+    //  this._router.navigate(['dashboard']);
   });
 }
 socialLogin1(userid) {
@@ -352,6 +472,54 @@ socialLogin1(userid) {
     // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
     //  this._router.navigate(['dashboard']);
   });
+}
+addsocialUserType() {
+  var data = {
+   user_id: this.userType.id,
+
+   my_id: this.userType.id,
+   first_name: this.userType.first_name,
+   last_name: this.userType.last_name,
+   user_name: this.userType.user_name,
+   birthdate: this.userType.birthdate,
+   email: this.userType.email,
+   password: this.userType.password,
+   google_id: this.userType.google_id,
+   facebook_id: this.userType.facebook_id,
+   current_package_id: "",
+   current_package_name: "",
+   current_package_type: "",
+   current_package_pay_by_user_id: "",
+   master_id:this.userType.master_id,
+   user_type:"",
+   url_slug: this.userType.url_slug,
+   action: "update",
+ };
+ 
+
+ console.log(data);
+ this.aunumservices.registerUpdate(data)
+ .subscribe(
+   data => {
+     var custdetails = data;
+ //     // console.log(data.data.result)
+ if (this.userType.google_id != "") {
+   sessionStorage.setItem("user_type",JSON.stringify(this.userType.user_type));
+   this.socialLoginGoogle1(this.userType.google_id);
+ }
+ if (this.userType.facebook_id != "") {
+   sessionStorage.setItem("user_type",JSON.stringify(this.userType.user_type));
+
+   this.socialLogin1(this.userType.facebook_id);
+ }
+ //     // this._router.navigate(['login']);
+ //     this.logindd();
+
+   },
+   error => {
+     console.log(error);
+   });
+ console.log(data);
 }
 
 signInWithGoogle(): void {
@@ -396,7 +564,56 @@ SavesresponseGoogle(userInfo: SocialUser) {
     // this.response = res.userDetail;
     // localStorage.setItem('socialusers', JSON.stringify( this.usersocial));
     // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
-    this.socialLoginGoogle1(userInfo.id);
+    this.socialLoginGoogle(userInfo.id);
+  });
+}
+socialLoginGoogle(userid) {
+  var userSet = {
+    action: "social_login",
+    google_id: userid,
+  };
+  // console.log(userSet);
+  this.userService.social_login(userSet).subscribe((res: any) => {
+    // debugger;
+
+    // this._router.navigate(['dashboard']);
+    var val = {
+      birthdate: res.data.result.birthdate,
+      created_at: res.data.result.created_at,
+      current_package_id: res.data.result.current_package_id,
+      current_package_name: res.data.result.current_package_name,
+      current_package_pay_by_user_id:res.data.result.current_package_pay_by_user_id,
+      current_package_type: res.data.result.current_package_type,
+      deleted_status: res.data.result.deleted_status,
+      email: res.data.result.email,
+      facebook_id: res.data.result.facebook_id,
+      first_name: res.data.result.first_name,
+      google_id: res.data.result.google_id,
+      id: res.data.result.id,
+      last_name: res.data.result.last_name,
+      master_id: res.data.result.master_id,
+      password: res.data.result.password,
+      permission_to_create_course:res.data.result.permission_to_create_course,
+      permission_to_join_classes: res.data.result.permission_to_join_classes,
+      status: res.data.result.status,
+      updated_at: res.data.result.updated_at,
+      url_slug: res.data.result.url_slug,
+      user_name: res.data.result.user_name,
+      user_type:this.uType,
+    };
+    this.userType = val;
+    
+
+    if (this.userType.user_type != null && this.userType.user_type != "" && this.userType.user_type != undefined) {
+      this._router.navigate(["dashboard"]);
+    } else {
+      // alert("select Type first");
+      document.getElementById("openModalButton").click();
+    }
+
+    // this.response = res.userDetail;
+    // localStorage.setItem('socialusers', JSON.stringify( this.usersocial));
+    // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
   });
 }
 socialLoginGoogle1(userid) {
@@ -418,4 +635,5 @@ socialLoginGoogle1(userid) {
     // console.log(localStorage.setItem('socialusers', JSON.stringify(this.usersocial)));
   });
 }
+
 }

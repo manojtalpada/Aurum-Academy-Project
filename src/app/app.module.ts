@@ -18,6 +18,7 @@ import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/c
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './helper';
 import { FullLayoutComponent, SimpleLayoutComponent } from './containers';
+import { ModalModule, AlertModule, TabsModule } from 'ngx-bootstrap';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -31,10 +32,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { SelectModule } from 'ng-select';
 import { DataTableModule } from 'angular2-datatable'; 
-import { TeacherDashboardComponent } from './view/teacher-dashboard/teacher-dashboard.component';
+import { CustomFormsModule} from 'ng2-validation';
+import { SubaccountsComponent } from './view/subaccounts/subaccounts.component'
+import { ViewUserFilterPipe } from './view/subaccounts/datafilterpipe';
 import { StudentDashboardComponent } from './view/student-dashboard/student-dashboard.component';
-
-import { CustomFormsModule} from 'ng2-validation'
  
 
 const APP_CONTAINERS = [
@@ -71,7 +72,8 @@ export function provideConfig() {
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    TeacherDashboardComponent,
+    SubaccountsComponent,
+    ViewUserFilterPipe,
     StudentDashboardComponent
   ],
   imports: [
@@ -87,7 +89,9 @@ export function provideConfig() {
     SelectModule, 
     ReactiveFormsModule,
     AngularEditorModule,
-    ButtonsModule.forRoot(),
+    ButtonsModule.forRoot(), 
+    ModalModule.forRoot(),
+    AlertModule.forRoot(),
     CKEditorModule,
 
  

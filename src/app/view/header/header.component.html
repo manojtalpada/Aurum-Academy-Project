@@ -1,16 +1,63 @@
-<section class="main-bg" style="background-image:url(assets/images/background-main.jpg);">
+<div class="dashboard-sidebar">
+    <div class="site-logo">
+        <a href="#"><img src="assets/images/logo.png" class="img-fluid" alt=""></a>
+    </div>
+    <div class="teacher-info text-center">
+        <div class="teacher-avatar">
+            <img src="assets/images/user.jpg" alt="">
+        </div>
+        <a href="#" class="btn btn-success btn-sm">Edit Profile</a>
+    </div>
+    <div class="dashboard-navigation">
+        <div class="switch-button">
+            Switch User
+            <label class="switch">
+                <input type="checkbox" (click)="switchuser();">
+                <span class="slider round"></span>
+              </label>
+        </div>
+        <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
 
-<header id="header" class="fixed-top">
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="index.html">
-                <span class="logo-white"><img src="assets/images/logo.png" alt="" class="img-fluid"></span>
-            </a>
-            <div class="ml-auto">
-                <a href="#" routerLink="/logout" class="btn btn-primary">LogOut</a>
+            <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#decks">
+                <a class="nav-title"> <span><img src="assets/images/teacher/icon-decks.png"></span> Decks </a>
+            </div>
+            <div id="decks" class="nav-body collapse" data-parent="#accordion">
+                <ul>
+                    <li><a href="#">Lesson sub heading</a></li>
+                    <li><a href="#">Lesson sub heading</a></li>
+                    <li><a href="#">Lesson sub heading</a></li>
+                    <li><a href="#">Lesson sub heading</a></li>
+                </ul>
+            </div>
+            <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#grades">
+                <a class="nav-title"><span><img src="assets/images/teacher/icon-grades.png"></span> Grades</a>
+            </div>
+            <div id="grades" class="nav-body collapse" data-parent="#accordion">
+                No grade here
+            </div>
+            <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#messages">
+                <a class="nav-title"><span><img src="assets/images/teacher/icon-messages.png"></span> Messages</a>
+            </div>
+            <div id="messages" class="nav-body collapse" data-parent="#accordion">
+                No message here
+            </div>
+            <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#courses">
+                <a class="nav-title"><span><img src="assets/images/teacher/icon-courses.png"></span> Courses</a>
+            </div>
+            <div id="courses" class="nav-body collapse" data-parent="#accordion">
+                <ul>
+                    <li><a href="#">English Courses</a></li>
+                    <li><a href="#">Science Courses</a></li>
+                    <li><a href="#">Maths Courses</a></li>
+                    <li><a href="#">Social Courses</a></li>
+                </ul>
+            </div>
+            <div *ngIf="userType == 't'" class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" routerLink="/subaccounts">
+                <a class="nav-title"><span><img src="assets/images/user-png.png"></span>SubAccount</a>
+            </div>
+            <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" routerLink="/logout">
+                <a class="nav-title"><span><img src="assets/images/user-png.png"></span>Logout</a>
             </div>
         </div>
-    </nav>
-</header>
-</section>
+    </div>
+</div>
