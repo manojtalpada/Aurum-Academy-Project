@@ -3,61 +3,9 @@
 
         <div class="col-sm-3 bg-dark">
             <app-header></app-header>
+
         </div>
 
-        <!-- <div class="dashboard-sidebar">
-        <div class="site-logo">
-            <a href="#"><img src="assets/images/logo.png" class="img-fluid" alt=""></a>
-        </div>
-        <div class="teacher-info text-center">
-            <div class="teacher-avatar">
-                <img src="assets/images/user.jpg" alt="">
-            </div>
-            <a href="#" class="btn btn-success btn-sm">Edit Profile</a>
-        </div>
-        <div class="dashboard-navigation">
-            <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
-
-                <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#decks">
-                    <a class="nav-title"> <span><img src="assets/images/teacher/icon-decks.png"></span> Decks </a>
-                </div>
-                <div id="decks" class="nav-body collapse" data-parent="#accordion">
-                    <ul>
-                        <li><a href="#">Lesson sub heading</a></li>
-                        <li><a href="#">Lesson sub heading</a></li>
-                        <li><a href="#">Lesson sub heading</a></li>
-                        <li><a href="#">Lesson sub heading</a></li>
-                    </ul>
-                </div>
-                <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#grades">
-                    <a class="nav-title"><span><img src="assets/images/teacher/icon-grades.png"></span> Grades</a>
-                </div>
-                <div id="grades" class="nav-body collapse" data-parent="#accordion">
-                    No grade here
-                </div>
-                <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#messages">
-                    <a class="nav-title"><span><img src="assets/images/teacher/icon-messages.png"></span> Messages</a>
-                </div>
-                <div id="messages" class="nav-body collapse" data-parent="#accordion">
-                    No message here
-                </div>
-                <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#courses">
-                    <a class="nav-title"><span><img src="assets/images/teacher/icon-courses.png"></span> Courses</a>
-                </div>
-                <div id="courses" class="nav-body collapse" data-parent="#accordion">
-                    <ul>
-                        <li><a href="#">English Courses</a></li>
-                        <li><a href="#">Science Courses</a></li>
-                        <li><a href="#">Maths Courses</a></li>
-                        <li><a href="#">Social Courses</a></li>
-                    </ul>
-                </div>
-                <div class="nav-header collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#">
-                    <a class="nav-title"><span><img src="assets/images/user-png.png"></span> Sub Account</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
         <div class="col-sm-9 bg-light">
             <div class="dashboard-content">
                 <div class="heading-section">
@@ -79,6 +27,10 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
+                                        <div class="form-group" *ngIf="this.currentUser.url_slug != ''">
+                                            <input type="text" [(ngModel)]="url" style="width: 250px;" readonly value="Enter text to be copied" #userinput>
+                                            <button (click)="copyInputMessage(userinput)" class="btn btn-primary btn-sm " value="click to copy">Copy from Textbox</button>
+                                        </div>
                                         <table class="table" [mfData]="userlist | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="5">
                                             <thead>
                                                 <tr>
@@ -112,9 +64,9 @@
                                                                 <i class="fa fa-edit"></i>
                                                               </button>
                                                         </td> -->
-                                                    <td>
+                                                    <!-- <td>
                                                         <a [routerLink]="[item.user_name+'/contact']">Go to details</a>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             </tbody>
                                             <tfoot>
@@ -222,7 +174,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-sm-12 text-right">
-                                            <button class="btn btn-success" (click)="addAccount();">Submit</button>
+                                            <button class="btn btn-success" (click)="addAccount();addsub = false;">Submit</button>
                                             <button (click)="addsub = false" class="btn btn-primary" style="margin-left: 10px;">Cancel</button>
                                         </div>
                                     </div>
@@ -244,17 +196,7 @@
     </div>
 </section>
 
-<!-- <div class="info-section">
 
-    <div class="col-sm-9">
-    
-    </div>
-</div> -->
-
-
-
-<!-- <app-header></app-header> -->
-<!-- 
 <div bsModal #userModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

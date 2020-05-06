@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:"logout",component:LogoutComponent,canActivate: [AuthGuard],},
   {path :"main-page",component:MainPageComponent},
   {path :"dashboard",component:DashboardComponent,canActivate: [AuthGuard]},
-  {path:"student-dashboard",component:StudentDashboardComponent},
+  {path:"student-dashboard",component:StudentDashboardComponent,canActivate: [AuthGuard]},
   {path :"subaccounts",component:SubaccountsComponent,canActivate: [AuthGuard]},
 
   {path:"",redirectTo:"dashboard",pathMatch:"full"},

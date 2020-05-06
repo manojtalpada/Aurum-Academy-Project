@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   userType;
-  constructor() { 
+  constructor( private _router: Router) { 
     this.userType =JSON.parse(sessionStorage.getItem('user_type'));
   }
 
@@ -15,11 +16,12 @@ export class HeaderComponent implements OnInit {
   }
 
   switchuser(){
-    alert("hi")
+    // alert("hi")
     if(this.userType =="t" && this.userType!="")
     {
       this.userType='s';
       sessionStorage.setItem('user_type', JSON.stringify(this.userType));
+      this._router.navigate(["dashboard"]);
     }      
     else{
       this.userType='t';

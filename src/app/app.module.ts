@@ -37,6 +37,7 @@ import { SubaccountsComponent } from './view/subaccounts/subaccounts.component'
 import { ViewUserFilterPipe } from './view/subaccounts/datafilterpipe';
 import { StudentDashboardComponent } from './view/student-dashboard/student-dashboard.component';
  
+import { ClipboardModule } from 'ngx-clipboard';
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
@@ -93,7 +94,7 @@ export function provideConfig() {
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     CKEditorModule,
-
+    ClipboardModule
  
   ],
   providers: [
