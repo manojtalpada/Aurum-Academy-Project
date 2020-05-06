@@ -8,14 +8,14 @@
 
         <div class="col-sm-9 bg-light">
             <div class="dashboard-content">
-                <div class="heading-section">
+                <!-- <div class="heading-section">
                     <h2>Math Courses</h2>
                     <div class="heading-meta">Creator : <a href="#">nick1988</a> | 20 lessions</div>
                     <div class="meta-links">
                         <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     </div>
-                </div>
+                </div> -->
                 <div *ngIf="addsub == false">
                     <div class="info-section">
                         <div class="row">
@@ -23,13 +23,13 @@
                                 <div class="table-heading">
                                     <h3>User Details</h3>
                                     <a (click)="addmodal();" class="btn btn-success float-right">+ Create New Account</a>
-
+                                    <button id="openTypeModal" (click)="slugModal.show();" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-group" *ngIf="this.currentUser.url_slug != ''">
                                             <input type="text" [(ngModel)]="url" style="width: 250px;" readonly value="Enter text to be copied" #userinput>
-                                            <button (click)="copyInputMessage(userinput)" class="btn btn-primary btn-sm " value="click to copy">Copy from Textbox</button>
+                                            <button (click)="copyInputMessage(userinput)" class="btn btn-primary btn-sm " value="click to copy">Copy To Clipboard</button>
                                         </div>
                                         <table class="table" [mfData]="userlist | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="5">
                                             <thead>

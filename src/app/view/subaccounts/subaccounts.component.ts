@@ -44,9 +44,9 @@ export class SubaccountsComponent implements OnInit {
     //   })
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser')) 
        this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug;
-      //  this.url = 'https://reds.a2hosted.com/AurumAcademy/#/login'+this.currentUser.url_slug
+      //  this.url = 'https://reds.a2hosted.com/AurumAcademy/#/login/'+this.currentUser.url_slug
 
-       console.log(this.url)
+      //  console.log(this.url)
   }
 
 
@@ -55,25 +55,27 @@ export class SubaccountsComponent implements OnInit {
 
     this.users = user;
   }
-  openModel(){
+  addmodal(){
 
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser'))
     var url;
        url = 'localhost:4200/#/login/'+this.currentUser.url_slug
-      //  url = 'https://reds.a2hosted.com/AurumAcademy/#/login'+this.currentUser.url_slug
+      //  url = 'https://reds.a2hosted.com/AurumAcademy/#/login/'+this.currentUser.url_slug
        console.log(url)
     console.log(this.currentUser.url_slug)
     if(this.currentUser.url_slug != null && this.currentUser.url_slug != ""){
-      document.getElementById("openModalUserButton").click();
+      // document.getElementById("openModalUserButton").click();
+      this.addsub = true;
+
 
     }else{
       document.getElementById("openTypeModal").click();
 
     }
   }
-  addmodal(){
-    this.addsub = true;
-  }
+  // addmodal(){
+  //   this.addsub = true;
+  // }
   updateSlug() {
 
     var data = {
@@ -106,6 +108,8 @@ export class SubaccountsComponent implements OnInit {
        sessionStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 
         this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+        // this.url = 'https://reds.a2hosted.com/AurumAcademy/#/login/'+this.currentUser.url_slug
+
        console.log(this.url)
       alert('Slug_Added Successfully')
        // this._router.navigate(['login']);
