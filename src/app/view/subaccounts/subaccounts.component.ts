@@ -54,7 +54,7 @@ export class SubaccountsComponent implements OnInit {
 
     this.users = user;
   }
-  openModel(){
+  addmodal(){
 
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser'))
     var url;
@@ -62,16 +62,18 @@ export class SubaccountsComponent implements OnInit {
        console.log(url)
     console.log(this.currentUser.url_slug)
     if(this.currentUser.url_slug != null && this.currentUser.url_slug != ""){
-      document.getElementById("openModalUserButton").click();
+      // document.getElementById("openModalUserButton").click();
+      this.addsub = true;
+
 
     }else{
       document.getElementById("openTypeModal").click();
 
     }
   }
-  addmodal(){
-    this.addsub = true;
-  }
+  // addmodal(){
+  //   this.addsub = true;
+  // }
   updateSlug() {
 
     var data = {

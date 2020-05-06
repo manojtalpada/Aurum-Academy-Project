@@ -20,8 +20,8 @@
                     <h3 class="text-center">Welcome Back</h3>
                     <h5 class="text-center">Sign in to Aurum Academy</h5>
                     <div class="social-login">
-                        <a (click)="signInWithFB('facebook')" class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
-                        <a (click)="signInWithGoogle()" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
+                        <a (click)="signInWithFB('facebook');" class="login-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login with Facebook</a>
+                        <a (click)="signInWithGoogle();" class="login-gmail"><i class="fa fa-google" aria-hidden="true"></i> Login with Gmail</a>
                     </div>
                     <div class="or">
                         <span>OR</span>
@@ -184,12 +184,12 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="form-group">
-                                <label for="select1">Select UserTypdasdase</label>
-                                <fieldset class="form-group">
-                                    <ng-select name="user_type" [(ngModel)]="userType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="type" [allowClear]="true"></ng-select>
-                                </fieldset>
-                            </div>
+                            <!-- <div class="form-group"> -->
+                            <label for="select1">Select UserTypdasdase</label>
+                            <fieldset>
+                                <ng-select name="user_type" [(ngModel)]="userType.user_type" #user_type="ngModel" placeholder="Select user_type" [options]="types" [allowClear]="true"></ng-select>
+                            </fieldset>
+                            <!-- </div> -->
                             <!-- <div *ngIf="slug_type=='Teacher'" class="form-group">
                                 <label for="name">Slug URL</label>
                                 <input class="form-control" id="name" type="text" [(ngModel)]="userType.url_slug" #url_slug="ngModel" name="url_slug" placeholder="Enter Slug URL">
