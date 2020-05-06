@@ -63,7 +63,16 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         data => { 
           var custdetails = data; 
-          this._router.navigate(['login']);
+          console.log(custdetails)
+          if(custdetails.status == 1){
+            alert(custdetails.message);
+            this._router.navigate(['login']);
+
+          }else{
+            alert(custdetails.message);
+
+
+          }
          
         },
         error => {

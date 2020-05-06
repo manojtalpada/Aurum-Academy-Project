@@ -291,8 +291,7 @@ export class LoginComponent implements OnInit {
      },
      error => {
        console.log(error);
-     });
-   console.log(data);
+     }); 
  }
 
  subbLogin(){
