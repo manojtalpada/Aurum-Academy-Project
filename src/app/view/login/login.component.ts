@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   uType:any = "";
 
   // private loggedIn: boolean;
-  public type: Array<IOption> = [
+  public types: Array<IOption> = [
     { value: "t", label: "Teacher" },
     { value: "s", label: "Student" },
   ];
@@ -43,10 +43,13 @@ export class LoginComponent implements OnInit {
   contact: any;
   userdata: any = {};
   contacts: any[] = [];
-  constructor(private SocialloginService: UserService,private contactService: ContactService,private aunumservices : AunumService,private authService: AuthService,private userService: UserService, private _router: Router, private _route: ActivatedRoute, private _masterservices: MasterService, public authenticationService: AuthenticationService) { }
+  constructor(private SocialloginService: UserService,private contactService: ContactService,private aunumservices : AunumService,private authService: AuthService,private userService: UserService, private _router: Router, private _route: ActivatedRoute, private _masterservices: MasterService, public authenticationService: AuthenticationService) {
+    
+   }
   
   ngOnInit() {
 
+    console.log(this.types)
     this._route.paramMap.subscribe(params => {
       // console.log(params.get("slug_url"))
       this.slug_url = params.get("slug_url")

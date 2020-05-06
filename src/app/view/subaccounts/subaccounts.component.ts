@@ -18,9 +18,11 @@ export class SubaccountsComponent implements OnInit {
   url:any={};
   userid = sessionStorage.getItem('userid');
   contact: any;
+  addsub = false;
   userdata: any = {};
   contacts: any[] = [];
   userType:any={};
+  userTypes:any={};
   currentUser:any={};
   public type: Array<IOption> = [
       
@@ -29,6 +31,7 @@ export class SubaccountsComponent implements OnInit {
 
 ];
   constructor(private aunumservices: AunumService,private _route: ActivatedRoute,private contactService: ContactService) {    
+    this.userTypes =JSON.parse(sessionStorage.getItem('user_type'));
     this.getAllUser();
 
    }
@@ -65,6 +68,9 @@ export class SubaccountsComponent implements OnInit {
       document.getElementById("openTypeModal").click();
 
     }
+  }
+  addmodal(){
+    this.addsub = true;
   }
   updateSlug() {
 
@@ -137,7 +143,7 @@ export class SubaccountsComponent implements OnInit {
           });
           console.log(list)
           this.userlist = list;
-          // console.log(this.userlist)
+          console.log("sub",this.userlist)
  
   },
   error => {

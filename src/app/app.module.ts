@@ -35,6 +35,8 @@ import { DataTableModule } from 'angular2-datatable';
 import { CustomFormsModule} from 'ng2-validation';
 import { SubaccountsComponent } from './view/subaccounts/subaccounts.component'
 import { ViewUserFilterPipe } from './view/subaccounts/datafilterpipe';
+import { StudentDashboardComponent } from './view/student-dashboard/student-dashboard.component';
+ 
 import { ClipboardModule } from 'ngx-clipboard';
 
 const APP_CONTAINERS = [
@@ -72,7 +74,8 @@ export function provideConfig() {
     HeaderComponent,
     FooterComponent,
     SubaccountsComponent,
-    ViewUserFilterPipe
+    ViewUserFilterPipe,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
