@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  APP_URL:"http://192.168.29.53/aurum/inrest"
+  // APP_URL:"http://192.168.29.53/aurum/inrest"
+  APP_URL:"https://reds.a2hosted.com/aurum/inrest"
 };
 
 /*

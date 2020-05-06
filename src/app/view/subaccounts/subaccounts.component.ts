@@ -43,7 +43,8 @@ export class SubaccountsComponent implements OnInit {
     //   console.log(this.contacts)
     //   })
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser')) 
-       this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+       this.url = 'localhost:4200/#/login/'+this.currentUser.url_slug;
+      //  this.url = 'https://reds.a2hosted.com/AurumAcademy/#/login'+this.currentUser.url_slug
 
        console.log(this.url)
   }
@@ -59,6 +60,7 @@ export class SubaccountsComponent implements OnInit {
     this.currentUser = JSON.parse( sessionStorage.getItem('currentUser'))
     var url;
        url = 'localhost:4200/#/login/'+this.currentUser.url_slug
+      //  url = 'https://reds.a2hosted.com/AurumAcademy/#/login'+this.currentUser.url_slug
        console.log(url)
     console.log(this.currentUser.url_slug)
     if(this.currentUser.url_slug != null && this.currentUser.url_slug != ""){
